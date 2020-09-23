@@ -10,18 +10,30 @@ namespace Task_2
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            bool Flag = true;
+            while (Flag == true)
+            {
+                try
+                {
+                    Console.OutputEncoding = System.Text.Encoding.UTF8;
+                    Console.Write("введіть змінну типу int: ");
+                    int a = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("введіть змінну типу int: ");
-            int a = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("введіть змінну типу double: ");
+                    double b = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("введіть змінну типу double: ");
-            double b = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("введіть змінну типу long: ");
+                    long c = Convert.ToInt64(Console.ReadLine());
 
-            Console.WriteLine("введіть змінну типу long: ");
-            long c = Convert.ToInt64(Console.ReadLine());
-
-            Console.WriteLine($"a = {a}; b = {b}; с = {c}");
+                    Console.WriteLine($"a = {a}; b = {b}; c = {c}");
+                    Console.ReadKey();
+                }
+                catch
+                {
+                    Flag = true;
+                    Console.WriteLine("Enter correct value");
+                }
+            }
         }
     }
 }
